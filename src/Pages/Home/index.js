@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 
-import Header from "../../Components/Header";
-import SearchInput from "../../Components/SearchInput";
-import Categories from "../../Components/Categories";
-import Popular from "../../Components/Popular";
+import Header from "./components/Header";
+import SearchInput from "./components/SearchInput";
+import Categories from "./components/Categories";
+import Popular from "./components/Popular";
 
 export default function Home({ navigation }) {
   return (
@@ -14,7 +14,7 @@ export default function Home({ navigation }) {
         <SearchInput />
         <View>
           <Categories navigation={navigation} />
-          <Popular />
+          <Popular navigation={navigation} />
         </View>
       </View>
     </View>
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#141834",
     flexDirection: "column",
+    paddingBottom: Platform.OS === 'ios' ? 0 : 50
   },
   Title: {
     color: "#fff",

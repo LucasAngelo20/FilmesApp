@@ -22,8 +22,8 @@ export default function Header() {
         Olá, Lucas!
       </Text>
       <Image
-        source={require("../../../assets/download.png")}
-        style={{ width: imageW, height: imageH, borderRadius: "50%" }}
+        source={require("../../../../../assets/download.png")}
+        style={{ width: imageW, height: imageH, borderRadius: 50 }}
       />
     </View>
   );

@@ -2,27 +2,47 @@
   "Movies": [
     {
       "id": "1",
-      "Title": "La casa de papel",
+      "Title": "La casa de papel 4 temporada",
+      "Author": "Lucas Gomes",
+      "Rating": "4.5",
+      "Genres" : ["Ação","Drama","Suspense", "Crime"],
+      "Synopsis": "Oito ladrões se trancam com reféns na Casa da Moeda da Espanha. Seu líder manipula a polícia para realizar um plano. Será o maior roubo da história, ou uma missão em vão? Assista o quanto quiser.",
       "url": "https://musicnonstop.uol.com.br/wp-content/uploads/2021/08/PT-BR_LCDP_S5_Main_Vertical_RGB_PRE.jpg"
     },
     {
       "id": "2",
       "Title": "13 Reason Why",
+      "Author": "Lucas Gomes",
+      "Rating": "4.8",
+      "Genres" : ["Drama teen","Drama","Suspense psicológico", "Mistério"],
+      "Synopsis": "Hannah Baker se suicida, deixando 7 fitas onde enumera 13 razões que a levaram à morte. Clay, seu colega de trabalho e de turma, recebe uma encomenda no correio e começa a escutar as gravações. Junto com Clay, o público vai descobrindo as situações que Hannah enfrentava desde que chegou na cidade.",
       "url": "http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/WhatsApp-Image-2018-06-04-at-21.34.25.jpeg"
     },
     {
       "id": "3",
       "Title": "Elite",
+      "Author": "Lucas Gomes",
+      "Rating": "3",
+      "Genres" : ["Drama","Suspense","Mistério"],
+      "Synopsis": "Elite se passa na Espanha, abordando a vida luxuosa e cheia de ganância de adultos e jovens alunos do colégio Las Encinas. A premissa inicial da trama era abordar o assassinato de Marina (María Pedraza), o que foi completamente resolvido somente no fim da terceira temporada.",
       "url": "https://br.web.img3.acsta.net/pictures/18/09/10/17/18/5384331.jpg"
     },
     {
       "id": "4",
       "Title": "The Witcher",
+      "Author": "Lucas Gomes",
+      "Rating": "5",
+      "Genres" : ["Ação","Fantasia televisiva","Drama", "Fantasia", "Ficção de aventura"],
+      "Synopsis": "Com os reis, elfos, humanos e demônios do Continente lutando por supremacia do lado de fora dos muros, ele deve proteger a garota de algo muito mais perigoso: o misterioso poder que possui dentro dela.",
       "url": "https://br.web.img3.acsta.net/pictures/19/11/29/17/57/5161763.jpg"
     },
     {
       "id": "5",
       "Title": "Lucifer",
+      "Author": "Lucas Gomes",
+      "Rating": "5",
+      "Genres" : ["Terror","Fantasia televisiva","Mistério", "Comédia"],
+      "Synopsis": "A série se desenvolve ao redor de Lucifer Morningstar, que está entediado e infeliz como o Senhor do Inferno. Ele renuncia seu trono e abandona seu reinado para tirar férias em Los Angeles, onde dá início a uma casa noturna com a ajuda de sua aliada demoníaca, Mazikeen Smith.",
       "url": "https://i1.wp.com/www.literalmenteuai.com.br/wp-content/uploads/2017/12/Lucifer_S2_1536x2048.jpg?resize=274%2C398"
     }
   ]

@@ -22,9 +22,9 @@ export default function Categories({navigation}) {
           alignSelf: 'center'
         }}
       >
-        <Text style={{ fontSize: 22, color: "#fff" }}>Categories</Text>
+        <Text style={{ fontSize: 22, color: "#fff" }}>Categorias</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-          <Text style={{ fontSize: 14, color: "#888" }}>See more</Text>
+          <Text style={{ fontSize: 14, color: "#888" }}>Ver mais</Text>
         </TouchableOpacity>
       </View>
       <View
@@ -45,10 +45,10 @@ export default function Categories({navigation}) {
           }}
         >
           <Image
-            source={require("../../../assets/face-screaming-in-fear_1f631.png")}
+            source={require("../../../../../assets/face-screaming-in-fear_1f631.png")}
             style={{ height: 30, width: 30, marginBottom: 7 }}
           />
-          <Text style={{ color: "#fff", fontSize: 12 }}>Horror</Text>
+          <Text style={{ color: "#fff", fontSize: 12 }}>Terror</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
@@ -61,7 +61,7 @@ export default function Categories({navigation}) {
           }}
         >
           <Image
-            source={require("../../../assets/smiling-face-with-hearts_1f970.png")}
+            source={require("../../../../../assets/smiling-face-with-hearts_1f970.png")}
             style={{ height: 30, width: 30, marginBottom: 7 }}
           />
           <Text style={{ color: "#fff", fontSize: 12 }}>Romance</Text>
@@ -77,7 +77,7 @@ export default function Categories({navigation}) {
           }}
         >
           <Image
-            source={require("../../../assets/zany-face_1f92a.png")}
+            source={require("../../../../../assets/zany-face_1f92a.png")}
             style={{ height: 30, width: 30, marginBottom: 7 }}
           />
           <Text style={{ color: "#fff", fontSize: 12 }}>Comédia</Text>
@@ -93,7 +93,7 @@ export default function Categories({navigation}) {
           }}
         >
           <Image
-            source={require("../../../assets/star-struck_1f929.png")}
+            source={require("../../../../../assets/star-struck_1f929.png")}
             style={{ height: 30, width: 30, marginBottom: 7 }}
           />
           <Text style={{ color: "#fff", fontSize: 12 }}>Drama</Text>

@@ -20,7 +20,7 @@ export default function SearchInput() {
       }}
     >
       <Image
-        source={require("../../../assets/SearchIcon.png")}
+        source={require("../../../../../assets/SearchIcon.png")}
         style={{ height: 20, width: 20, tintColor: "#566075", marginRight: 20 }}
       />
       <TextInput

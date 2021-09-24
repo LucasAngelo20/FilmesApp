@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import {HomeScreen} from "./routeStack";
+import { HomeScreen } from "./routesStack";
 import Explore from "../Pages/Explore";
 import Favorites from "../Pages/Favorites";
 import Profile from "../Pages/Profile";
@@ -15,9 +15,10 @@ export default function Routes() {
       screenOptions={{
         tabBarStyle: {
           position: "absolute",
-          height: 100,
+          height: "10%",
           borderTopWidth: 0,
           backgroundColor: "transparent",
+          elevation: 0,
         },
         headerShown: false,
         tabBarHideOnKeyboard: true,
