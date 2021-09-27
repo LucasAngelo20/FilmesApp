@@ -1,22 +1,33 @@
 import React from "react";
-import { View, StyleSheet, Platform } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Platform,
+  SafeAreaView,
+  ScrollView,
+} from "react-native";
 
 import Header from "./components/Header";
 import SearchInput from "./components/SearchInput";
 import Categories from "./components/Categories";
 import Popular from "./components/Popular";
+import NewContent from "./components/NewContent";
+
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.Container}>
-      <Header />
-      <View style={styles.Body}>
-        <SearchInput />
-        <View>
-          <Categories navigation={navigation} />
-          <Popular navigation={navigation} />
+      <ScrollView style={{ paddingTop: 40 }}>
+        <Header />
+        <View style={styles.Body}>
+          <SearchInput />
+          <NewContent navigation={navigation} />
+          <View>
+            <Categories navigation={navigation} />
+            <Popular navigation={navigation} />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -26,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#141834",
     flexDirection: "column",
-    paddingBottom: Platform.OS === 'ios' ? 0 : 50
+    paddingBottom: Platform.OS === "ios" ? 0 : 50,
   },
   Title: {
     color: "#fff",

@@ -1,11 +1,39 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from "@react-navigation/stack";
 
-import { HomeScreen } from "./routesStack";
 import Explore from "../Pages/Explore";
 import Favorites from "../Pages/Favorites";
 import Profile from "../Pages/Profile";
+import Popular from "../Pages/Popular";
+import Details from "../Pages/Details";
+import Home from "../Pages/Home";
+import NewContent from "../Pages/Home/components/NewContent";
+import BuyTicket from "../Pages/BuyTicket";
+
+const Stack = createStackNavigator();
+
+export function HomeScreen() {
+  const navigatorOptions = {
+    headerShown: false,
+    cardStyle: { backgroundColor: "transparent" },
+    cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+  };
+
+  return (
+    <Stack.Navigator screenOptions={navigatorOptions}>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Popular" component={Popular} />
+      <Stack.Screen name="NewContent" component={NewContent} />
+      <Stack.Screen name="Details" component={Details} />
+      <Stack.Screen name="BuyTicket" component={BuyTicket} />
+    </Stack.Navigator>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 
@@ -15,9 +43,9 @@ export default function Routes() {
       screenOptions={{
         tabBarStyle: {
           position: "absolute",
-          height: "10%",
+          height: "8%",
           borderTopWidth: 0,
-          backgroundColor: "transparent",
+          backgroundColor: "#141834",
           elevation: 0,
         },
         headerShown: false,
@@ -26,7 +54,7 @@ export default function Routes() {
       }}
     >
       <Tab.Screen
-        name="Home"
+        name="HomeScreen"
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (

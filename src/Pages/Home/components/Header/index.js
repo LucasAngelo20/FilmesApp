@@ -12,6 +12,7 @@ export default function Header() {
         flex: 2,
         backgroundColor: "transparent",
         paddingHorizontal: 20,
+        marginBottom: 20,
         width: width,
         flexDirection: "row",
         alignItems: "center",

@@ -21,6 +21,7 @@ export default function Popular({ navigation }) {
     <View
       style={{
         marginTop: 20,
+        marginBottom: 100,
         flexDirection: "column",
         alignSelf: "center",
       }}

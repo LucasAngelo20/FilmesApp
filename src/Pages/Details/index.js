@@ -8,7 +8,8 @@ import {
   FlatList,
   SafeAreaView,
   ScrollView,
-  Platform
+  Platform,
+  TouchableOpacity,
 } from "react-native";
 
 import Header from "./components/Header";
@@ -22,12 +23,27 @@ export default function Details({ navigation, route }) {
   const movie = route.params.movie;
   return (
     <SafeAreaView style={styles.Container}>
+      <TouchableOpacity
+        style={styles.BuyButton}
+        onPress={() => navigation.navigate("BuyTicket")}
+      >
+        <Text style={styles.BuyButtonText}>Comprar ticket</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.FavoriteButton}
+        onPress={() => console.log("Alterado")}
+      >
+        <Image
+          source={require("../../../assets/IconsTabBar/Favorites.png")}
+          style={{ height: 25, width: 25, tintColor: "#fff" }}
+        />
+      </TouchableOpacity>
       <ScrollView
         contentContainerStyle={{
           alignItems: "center",
           justifyContent: "center",
-          paddingTop: Platform.OS === 'ios' ? 0 : 20,
-          paddingBottom: Platform.OS === 'ios' ? 0 : 70
+          paddingTop: Platform.OS === "ios" ? 0 : 20,
+          paddingBottom: Platform.OS === "ios" ? 0 : 70,
         }}
       >
         <Header navigation={navigation} />
@@ -71,6 +87,7 @@ export default function Details({ navigation, route }) {
           >
             <FlatList
               data={movie.Genres}
+              key={(item) => `${item.id}`}
               showsHorizontalScrollIndicator={false}
               scrollEnabled={movie.Genres.length > 5 ? true : false}
               horizontal
@@ -96,6 +113,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#141834",
     flexDirection: "column",
+    paddingTop: Platform === "ios" ? 0 : 30,
+    paddingBottom: Platform === "ios" ? 0 : 85,
   },
   Title: {
     color: "#fff",
@@ -169,5 +188,42 @@ const styles = StyleSheet.create({
     color: "#aaa",
     fontWeight: "300",
     textAlign: "left",
+  },
+  BuyButton: {
+    backgroundColor: "#536be0",
+    width: width - 200,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "center",
+    position: "absolute",
+    bottom: "13%",
+    borderRadius: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.0,
+
+    elevation: 24,
+    zIndex: 2,
+  },
+  BuyButtonText: {
+    color: "#fff",
+    textTransform: "uppercase",
+  },
+  FavoriteButton: {
+    backgroundColor: "#4F526A",
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 25,
+    position: "absolute",
+    bottom: "13%",
+    left: "10%",
+    zIndex: 2,
   },
 });
