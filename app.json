@@ -9,7 +9,6 @@
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#141834"
-      
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lucasangelo20.movies"
     },
     "android": {
       "adaptiveIcon": {

@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 26,
     position: "absolute",
-    left: "40%",
+    left: "37%",
   },
   Body: {
     flex: 12,

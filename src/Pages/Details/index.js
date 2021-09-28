@@ -25,7 +25,7 @@ export default function Details({ navigation, route }) {
     <SafeAreaView style={styles.Container}>
       <TouchableOpacity
         style={styles.BuyButton}
-        onPress={() => navigation.navigate("BuyTicket")}
+        onPress={() => navigation.navigate("BuyTicket", { movie: movie })}
       >
         <Text style={styles.BuyButtonText}>Comprar ticket</Text>
       </TouchableOpacity>

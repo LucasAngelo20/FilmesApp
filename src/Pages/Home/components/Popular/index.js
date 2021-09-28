@@ -67,7 +67,6 @@ export default function Popular({ navigation }) {
                   marginLeft: 5,
                   width: 200,
                   height: 30,
-                  textOverflow: "ellips",
                 }}
               >
                 {item.Title.length > 15
