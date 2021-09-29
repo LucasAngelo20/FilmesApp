@@ -87,7 +87,7 @@ export default function Details({ navigation, route }) {
           >
             <FlatList
               data={movie.Genres}
-              key={(item) => `${item.id}`}
+              keyExtractor={(item, index) => `${index}`}
               showsHorizontalScrollIndicator={false}
               scrollEnabled={movie.Genres.length > 5 ? true : false}
               horizontal

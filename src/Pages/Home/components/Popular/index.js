@@ -12,11 +12,14 @@ import StarRating from "../StartRating/index";
 
 import Data from "../../../../Data/data.json";
 
+import { ThemeContext } from "../../../../Context/ThemeProvider";
+
 const { width, height } = Dimensions.get("screen");
 const posterW = width * 0.5;
 const posterH = posterW * 1.3;
 
 export default function Popular({ navigation }) {
+  const { theme } = React.useContext(ThemeContext);
   return (
     <View
       style={{
@@ -35,7 +38,11 @@ export default function Popular({ navigation }) {
           alignSelf: "center",
         }}
       >
-        <Text style={{ fontSize: 22, color: "#fff" }}>Popular</Text>
+        <Text
+          style={{ fontSize: 22, color: theme === "dark" ? "#fff" : "#141834" }}
+        >
+          Popular
+        </Text>
         <TouchableOpacity onPress={() => navigation.navigate("Popular")}>
           <Text style={{ fontSize: 14, color: "#888" }}>Ver Mais</Text>
         </TouchableOpacity>
@@ -53,16 +60,29 @@ export default function Popular({ navigation }) {
             <TouchableOpacity
               onPress={() => navigation.navigate("Details", { movie: item })}
               activeOpacity={0.9}
-              style={{ marginTop: 20, marginHorizontal: 15 }}
+              style={{
+                marginTop: 20,
+                marginHorizontal: 15,
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 4,
+                },
+                shadowOpacity: 0.3,
+                shadowRadius: 4.65,
+
+                elevation: 5,
+              }}
             >
               <Image
                 source={{ uri: item.url }}
                 style={{ width: posterW, height: posterH, borderRadius: 30 }}
               />
+
               <Text
                 style={{
                   fontSize: 20,
-                  color: "#ddd",
+                  color: theme === "dark" ? "#ddd" : "#141834",
                   marginTop: 20,
                   marginLeft: 5,
                   width: 200,

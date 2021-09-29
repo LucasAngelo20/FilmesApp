@@ -12,12 +12,18 @@ import SearchInput from "./components/SearchInput";
 import Categories from "./components/Categories";
 import Popular from "./components/Popular";
 import NewContent from "./components/NewContent";
-
+import { ThemeContext } from "../../Context/ThemeProvider";
 
 export default function Home({ navigation }) {
+  const { theme } = React.useContext(ThemeContext);
   return (
-    <View style={styles.Container}>
-      <ScrollView style={{ paddingTop: 40 }}>
+    <View
+      style={(styles.Container, { backgroundColor: theme.backgroundColor })}
+    >
+      <ScrollView
+        style={{ paddingTop: 20 }}
+        showsVerticalScrollIndicator={false}
+      >
         <Header />
         <View style={styles.Body}>
           <SearchInput />
@@ -35,9 +41,8 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: "#141834",
     flexDirection: "column",
-    paddingBottom: Platform.OS === "ios" ? 0 : 50,
+    paddingBottom: Platform.OS === "ios" ? 30 : 50,
   },
   Title: {
     color: "#fff",

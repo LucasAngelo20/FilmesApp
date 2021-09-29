@@ -15,9 +15,11 @@ export default function BuyTicket({ navigation, route }) {
         <View style={styles.Places}>
           {places.map((item, index) => (
             <View
-            key={`code-${index}`}
+              key={`code-${index}`}
               style={{ width: 10, height: 10, backgroundColor: "yellow" }}
-            ><Text>{item.code}</Text></View>
+            >
+              <Text>{item.code}</Text>
+            </View>
           ))}
         </View>
       </View>
@@ -33,11 +35,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   Body: {
-    flex: 1, 
+    flex: 1,
   },
   Places: {
     width: width * 1.5,
     height: height * 0.5,
-    backgroundColor: 'yellow'
+    backgroundColor: "yellow",
   },
 });

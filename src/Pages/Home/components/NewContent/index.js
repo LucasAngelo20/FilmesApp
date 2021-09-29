@@ -9,6 +9,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
+import { ThemeContext } from "../../../../Context/ThemeProvider";
 
 import Data from "../../../../Data/data.json";
 
@@ -18,7 +19,8 @@ const imageH = imageW * 0.5;
 
 const Movies = Data.Movies;
 
-export default function NewContent({navigation}) {
+export default function NewContent({ navigation }) {
+  const { theme } = React.useContext(ThemeContext);
   const newSeasonScrollX = React.useRef(new Animated.Value(0)).current;
 
   const dotPosition = Animated.divide(newSeasonScrollX, width);
@@ -26,7 +28,14 @@ export default function NewContent({navigation}) {
   return (
     <View style={styles.Container}>
       <View>
-        <Text style={styles.Title}>Novo conteúdo</Text>
+        <Text
+          style={[
+            styles.Title,
+            { color: theme === "dark" ? "#fff" : "#141834" },
+          ]}
+        >
+          Novo conteúdo
+        </Text>
       </View>
       <Animated.FlatList
         data={Movies}
@@ -40,8 +49,8 @@ export default function NewContent({navigation}) {
         )}
         renderItem={({ item }) => (
           <TouchableOpacity
-          onPress={() => navigation.navigate('Details', {movie: item})}
-            style={{ width, alignItems: "center", justifyContent: "center" }}
+            onPress={() => navigation.navigate("Details", { movie: item })}
+            style={{ width, alignItems: "center", justifyContent: "center",  }}
           >
             <Image
               source={{ uri: item.Poster }}

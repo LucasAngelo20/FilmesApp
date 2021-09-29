@@ -1,10 +1,18 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-export default function Categories({navigation}) {
+import {ThemeContext} from '../../Context/ThemeProvider'
+
+export default function Categories({ navigation }) {
+  const {theme} = useContext(ThemeContext);
   return (
-    <View style={styles.Container}>
-      <TouchableOpacity onPress={() => navigation.goBack()} style={{ position: "absolute", top: "5%", left: "5%" }}>
+    <View
+      style={[styles.Container, { backgroundColor: theme.backgroundColor }]}
+    >
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={{ position: "absolute", top: "5%", left: "5%" }}
+      >
         <Image
           source={require("../../../assets/keyboard-left-arrow-button_icon-icons.com_72692.png")}
           style={{
@@ -22,7 +30,6 @@ export default function Categories({navigation}) {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: "#141834",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
