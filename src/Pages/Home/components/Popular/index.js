@@ -39,7 +39,7 @@ export default function Popular({ navigation }) {
         }}
       >
         <Text
-          style={{ fontSize: 22, color: theme === "dark" ? "#fff" : "#141834" }}
+          style={{ fontSize: 22, color: theme.titleColor }}
         >
           Popular
         </Text>
@@ -82,7 +82,7 @@ export default function Popular({ navigation }) {
               <Text
                 style={{
                   fontSize: 20,
-                  color: theme === "dark" ? "#ddd" : "#141834",
+                  color: theme.titleColor,
                   marginTop: 20,
                   marginLeft: 5,
                   width: 200,

@@ -1,6 +1,6 @@
 export const DefaultTheme = {
   backgroundColor: "#222",
-  secondaryBackgroundColor: "#1e2138",
+  secondaryBackgroundColor: "#333",
   titleColor: "#fff",
   secondaryTitleColor:'#fff',
   statusBar: {

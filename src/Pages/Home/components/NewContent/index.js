@@ -31,7 +31,7 @@ export default function NewContent({ navigation }) {
         <Text
           style={[
             styles.Title,
-            { color: theme === "dark" ? "#fff" : "#141834" },
+            { color: theme.titleColor},
           ]}
         >
           Novo conteúdo

@@ -19,8 +19,8 @@ export default function SearchInput() {
         width: width - 50,
         alignSelf: "center",
         marginBottom: 30,
-        backgroundColor: theme === "dark" ? "#141834" : "#fff",
-        shadowColor: theme === "dark" ? "#fff" : "#141834",
+        backgroundColor: theme.backgroundColor,
+        shadowColor:theme.titleColor,
         shadowOffset: {
           width: 0,
           height: 12,
