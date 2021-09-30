@@ -5,14 +5,11 @@ import {
   Dimensions,
   TouchableOpacity,
   Animated,
+  Image,
 } from "react-native";
 import { ThemeContext } from "../../../../Context/ThemeProvider";
 
 const { width, height } = Dimensions.get("screen");
-const imageWDark = width * 0.09;
-const imageHDark = imageWDark * 1;
-const imageWLight = width * 0.085;
-const imageHLight = imageWLight * 1;
 
 export default function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -56,15 +53,6 @@ export default function Header() {
             width: 50,
             height: 25,
             borderRadius: 25,
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 5,
-              height: 10,
-            },
-            shadowOpacity: 0.58,
-            shadowRadius: 4.65,
-
-            elevation: 5,
             flexDirection: "row",
             alignItems: "center",
           }}

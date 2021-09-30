@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import {ThemeContext} from '../../Context/ThemeProvider'
 
 export default function Categories({ navigation }) {
-  const {theme} = useContext(ThemeContext);
+  const {theme} = React.useContext(ThemeContext);
   return (
     <View
       style={[styles.Container, { backgroundColor: theme.backgroundColor }]}

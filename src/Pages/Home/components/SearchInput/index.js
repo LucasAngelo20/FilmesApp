@@ -20,15 +20,6 @@ export default function SearchInput() {
         alignSelf: "center",
         marginBottom: 30,
         backgroundColor: theme.backgroundColor,
-        shadowColor:theme.titleColor,
-        shadowOffset: {
-          width: 0,
-          height: 12,
-        },
-        shadowOpacity: 0.58,
-        shadowRadius: 16.0,
-
-        elevation: 3,
       }}
     >
       <Image

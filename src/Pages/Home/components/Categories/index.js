@@ -6,7 +6,7 @@ import { ThemeContext } from "../../../../Context/ThemeProvider";
 const { width, height } = Dimensions.get("screen");
 const emojiWidth = width / 5.5;
 
-export default function Categories({ navigation }) {
+export default function CategoriesTeste({ navigation }) {
   const { theme } = React.useContext(ThemeContext);
   return (
     <View
@@ -25,9 +25,7 @@ export default function Categories({ navigation }) {
           alignSelf: "center",
         }}
       >
-        <Text
-          style={{ fontSize: 22, color: theme.titleColor}}
-        >
+        <Text style={{ fontSize: 22, color: theme.titleColor }}>
           Categorias
         </Text>
         <TouchableOpacity onPress={() => navigation.navigate("Categories")}>
@@ -48,15 +46,7 @@ export default function Categories({ navigation }) {
             borderRadius: 22,
             justifyContent: "center",
             alignItems: "center",
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 12,
-            },
-            shadowOpacity: 0.58,
-            shadowRadius: 16.0,
 
-            elevation: 2,
             backgroundColor: theme.secondaryBackgroundColor,
           }}
         >
@@ -66,7 +56,7 @@ export default function Categories({ navigation }) {
           />
           <Text
             style={{
-              color:theme.secondaryTitleColor,
+              color: theme.secondaryTitleColor,
               fontSize: 12,
             }}
           >
@@ -80,15 +70,7 @@ export default function Categories({ navigation }) {
             borderRadius: 22,
             justifyContent: "center",
             alignItems: "center",
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 4,
-            },
-            shadowOpacity: 0.3,
-            shadowRadius: 4.65,
 
-            elevation: 2,
             backgroundColor: theme.secondaryBackgroundColor,
           }}
         >
@@ -112,15 +94,7 @@ export default function Categories({ navigation }) {
             borderRadius: 22,
             justifyContent: "center",
             alignItems: "center",
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 4,
-            },
-            shadowOpacity: 0.3,
-            shadowRadius: 4.65,
 
-            elevation: 2,
             backgroundColor: theme.secondaryBackgroundColor,
           }}
         >
@@ -144,15 +118,7 @@ export default function Categories({ navigation }) {
             borderRadius: 22,
             justifyContent: "center",
             alignItems: "center",
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 4,
-            },
-            shadowOpacity: 0.3,
-            shadowRadius: 4.65,
 
-            elevation: 2,
             backgroundColor: theme.secondaryBackgroundColor,
           }}
         >

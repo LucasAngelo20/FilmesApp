@@ -111,9 +111,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   Title: {
-    color: "#ddd",
     fontSize: 22,
-    fontWeight: "600",
+    fontWeight: "400",
     marginBottom: 20,
     width: width - 40,
     alignSelf: "center",

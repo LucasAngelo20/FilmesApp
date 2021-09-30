@@ -13,6 +13,7 @@ import {
 } from "react-native";
 
 import Header from "./components/Header";
+import { ThemeContext } from "../../Context/ThemeProvider";
 
 //Conteúdo
 const { width, height } = Dimensions.get("screen");
@@ -20,31 +21,26 @@ const imageW = width * 0.7;
 const imageH = imageW * 1.5;
 
 export default function Details({ navigation, route }) {
+  const { theme } = React.useContext(ThemeContext);
   const movie = route.params.movie;
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaView
+      style={[styles.Container, { backgroundColor: theme.backgroundColor }]}
+    >
       <TouchableOpacity
         style={styles.BuyButton}
         onPress={() => navigation.navigate("BuyTicket", { movie: movie })}
       >
         <Text style={styles.BuyButtonText}>Comprar ticket</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.FavoriteButton}
-        onPress={() => console.log("Alterado")}
-      >
-        <Image
-          source={require("../../../assets/IconsTabBar/Favorites.png")}
-          style={{ height: 25, width: 25, tintColor: "#fff" }}
-        />
-      </TouchableOpacity>
       <ScrollView
         contentContainerStyle={{
           alignItems: "center",
           justifyContent: "center",
-          paddingTop: Platform.OS === "ios" ? 0 : 20,
-          paddingBottom: Platform.OS === "ios" ? 0 : 70,
+          paddingBottom: Platform.OS === "ios" ? width * 0.15 : width * 0.22,
         }}
+        showsVerticalScrollIndicator={false}
+        bounces={true}
       >
         <Header navigation={navigation} />
         <View style={styles.Body}>
@@ -62,7 +58,7 @@ export default function Details({ navigation, route }) {
             <View style={styles.BackPoster2} />
           </View>
           <View>
-            <Text style={styles.MovieTitle}>{movie.Title}</Text>
+            <Text style={[styles.MovieTitle, {color: theme.titleColor}]}>{movie.Title}</Text>
           </View>
           <View
             style={{
@@ -113,8 +109,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#141834",
     flexDirection: "column",
-    paddingTop: Platform === "ios" ? 0 : 30,
-    paddingBottom: Platform === "ios" ? 0 : 85,
   },
   Title: {
     color: "#fff",
@@ -175,7 +169,7 @@ const styles = StyleSheet.create({
     padding: 9,
   },
   SinopseTitle: {
-    fontSize: 25,
+    fontSize: width * 0.06,
     fontWeight: "600",
     color: "#fff",
   },
@@ -183,8 +177,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   SinopseContent: {
-    fontSize: 20,
-    marginTop: 20,
+    fontSize: width * 0.05,
+    marginTop: width * 0.05,
     color: "#aaa",
     fontWeight: "300",
     textAlign: "left",
@@ -197,17 +191,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     alignSelf: "center",
     position: "absolute",
-    bottom: "13%",
+    bottom: width * 0.06,
     borderRadius: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    shadowOpacity: 0.58,
-    shadowRadius: 16.0,
-
-    elevation: 24,
     zIndex: 2,
   },
   BuyButtonText: {
@@ -222,7 +207,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 25,
     position: "absolute",
-    bottom: "13%",
+    bottom: "3%",
     left: "10%",
     zIndex: 2,
   },

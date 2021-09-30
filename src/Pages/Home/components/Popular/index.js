@@ -6,9 +6,10 @@ import {
   Image,
   Dimensions,
   FlatList,
+  StyleSheet,
 } from "react-native";
 
-import StarRating from "../StartRating/index";
+import StarRating from "./StartRating/index";
 
 import Data from "../../../../Data/data.json";
 
@@ -38,11 +39,7 @@ export default function Popular({ navigation }) {
           alignSelf: "center",
         }}
       >
-        <Text
-          style={{ fontSize: 22, color: theme.titleColor }}
-        >
-          Popular
-        </Text>
+        <Text style={{ fontSize: 22, color: theme.titleColor }}>Popular</Text>
         <TouchableOpacity onPress={() => navigation.navigate("Popular")}>
           <Text style={{ fontSize: 14, color: "#888" }}>Ver Mais</Text>
         </TouchableOpacity>
@@ -63,22 +60,20 @@ export default function Popular({ navigation }) {
               style={{
                 marginTop: 20,
                 marginHorizontal: 15,
-                shadowColor: "#000",
-                shadowOffset: {
-                  width: 0,
-                  height: 4,
-                },
-                shadowOpacity: 0.3,
-                shadowRadius: 4.65,
-
-                elevation: 5,
+                alignItems: "center"
               }}
             >
               <Image
                 source={{ uri: item.url }}
-                style={{ width: posterW, height: posterH, borderRadius: 30 }}
+                style={{
+                  width: posterW,
+                  height: posterH,
+                  borderRadius: 30,
+                  zIndex: 2,
+                }}
               />
-
+              <View style={styles.BackPoster} />
+              <View style={styles.BackPoster2} />
               <Text
                 style={{
                   fontSize: 20,
@@ -101,3 +96,25 @@ export default function Popular({ navigation }) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  BackPoster: {
+    backgroundColor: "#BABED1",
+    position: "absolute",
+    marginTop: 7,
+    height: posterH,
+    width: posterW - 15,
+    borderRadius: 30,
+    zIndex: 1,
+    opacity: 0.5,
+  },
+  BackPoster2: {
+    backgroundColor: "#4F526A",
+    position: "absolute",
+    marginTop: 14,
+    height: posterH,
+    width: posterW - 35,
+    borderRadius: 30,
+    opacity: 0.5,
+  },
+});

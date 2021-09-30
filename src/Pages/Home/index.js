@@ -17,13 +17,10 @@ import { ThemeContext } from "../../Context/ThemeProvider";
 export default function Home({ navigation }) {
   const { theme } = React.useContext(ThemeContext);
   return (
-    <View
+    <SafeAreaView
       style={(styles.Container, { backgroundColor: theme.backgroundColor })}
     >
-      <ScrollView
-        style={{ paddingTop: 20 }}
-        showsVerticalScrollIndicator={false}
-      >
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Header />
         <View style={styles.Body}>
           <SearchInput />
@@ -34,7 +31,7 @@ export default function Home({ navigation }) {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

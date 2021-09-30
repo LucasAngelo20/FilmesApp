@@ -2,9 +2,9 @@ import React from "react";
 import { View, Image, Dimensions, Animated, Platform } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
-  createStackNavigator,
+  createNativeStackNavigator,
   CardStyleInterpolators,
-} from "@react-navigation/stack";
+} from "@react-navigation/native-stack";
 
 import Explore from "../Pages/Explore";
 import Favorites from "../Pages/Favorites";
@@ -14,34 +14,34 @@ import Details from "../Pages/Details";
 import Home from "../Pages/Home";
 import NewContent from "../Pages/Home/components/NewContent";
 import BuyTicket from "../Pages/BuyTicket";
+import Categories from "../Pages/Categories";
 import { ThemeContext } from "../Context/ThemeProvider";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const { width, height } = Dimensions.get("screen");
 
-export function HomeScreen() {
-  const navigatorOptions = {
-    headerShown: false,
-    cardStyle: { backgroundColor: "transparent" },
-    cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-  };
-
+export default function Routes() {
   return (
-    <Stack.Navigator screenOptions={navigatorOptions}>
-      <Stack.Screen name="Home" component={Home} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Home" component={Tabs} />
       <Stack.Screen name="Popular" component={Popular} />
       <Stack.Screen name="NewContent" component={NewContent} />
       <Stack.Screen name="Details" component={Details} />
       <Stack.Screen name="BuyTicket" component={BuyTicket} />
+      <Stack.Screen name="Categories" component={Categories} />
     </Stack.Navigator>
   );
 }
 
 const Tab = createBottomTabNavigator();
 
-export default function Routes() {
-  const {theme} = React.useContext(ThemeContext)
+export function Tabs() {
+  const { theme } = React.useContext(ThemeContext);
   const tabOffsetValue = React.useRef(new Animated.Value(0)).current;
   return (
     <>
@@ -49,11 +49,11 @@ export default function Routes() {
         screenOptions={{
           tabBarStyle: {
             position: "absolute",
-            height: Platform.OS === "ios" ? '9%' : "7%",
+            height: Platform.OS === "ios" ? "9%" : "7%",
             borderTopWidth: 0,
             backgroundColor: theme.backgroundColor,
             elevation: 0,
-            paddingBottom: Platform.OS === "ios" ? 20 : 20,
+            paddingBottom: Platform.OS === "ios" ? 40 : 20,
           },
           headerShown: false,
           tabBarHideOnKeyboard: true,
@@ -61,8 +61,8 @@ export default function Routes() {
         }}
       >
         <Tab.Screen
-          name="HomeScreen"
-          component={HomeScreen}
+          name="Home"
+          component={Home}
           options={{
             tabBarIcon: ({ focused }) => (
               <View>
@@ -86,7 +86,7 @@ export default function Routes() {
               Animated.spring(tabOffsetValue, {
                 toValue: getWidth() * 0,
                 useNativeDriver: true,
-              }).start()
+              }).start();
             },
           })}
         />
@@ -116,7 +116,7 @@ export default function Routes() {
               Animated.spring(tabOffsetValue, {
                 toValue: getWidth() * 20,
                 useNativeDriver: true,
-              }).start()
+              }).start();
             },
           })}
         />
@@ -146,7 +146,7 @@ export default function Routes() {
               Animated.spring(tabOffsetValue, {
                 toValue: getWidth() * 40,
                 useNativeDriver: true,
-              }).start()
+              }).start();
             },
           })}
         />
@@ -176,7 +176,7 @@ export default function Routes() {
               Animated.spring(tabOffsetValue, {
                 toValue: getWidth() * 60,
                 useNativeDriver: true,
-              }).start()
+              }).start();
             },
           })}
         />
@@ -188,11 +188,9 @@ export default function Routes() {
           width: getWidth(),
           borderRadius: 2.5,
           position: "absolute",
-          bottom: 15,
+          bottom: Platform.OS === "ios" ? 30 : 15,
           left: width * 0.12,
-          transform: [
-            {translateX: tabOffsetValue}
-          ]
+          transform: [{ translateX: tabOffsetValue }],
         }}
       />
     </>

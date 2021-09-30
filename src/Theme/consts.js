@@ -2,7 +2,7 @@ export const DefaultTheme = {
   backgroundColor: "#222",
   secondaryBackgroundColor: "#333",
   titleColor: "#fff",
-  secondaryTitleColor:'#fff',
+  secondaryTitleColor:'#ddd',
   statusBar: {
     backgroundColor: "#222",
     barStyle: "light-content",
@@ -26,8 +26,8 @@ export const LightTheme = {
     barStyle: "dark-content",
   },
   toggleButton: {
-    backgroundColor: "#536be0",
-    button: "#fff",
+    backgroundColor: "#222",
+    button: "#536be0",
     buttonPosition: 0,
     justifyContent: "flex-end",
   },
